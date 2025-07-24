@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.lesson1;
 
 public class UserRequest {
  private   int  id;
