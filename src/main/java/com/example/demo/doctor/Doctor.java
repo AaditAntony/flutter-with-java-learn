@@ -1,16 +1,32 @@
 package com.example.demo.doctor;
 
-public class Doctor {
-    private long id;
-    private String name;
-    private String specilization;
-    private int experience;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
 
-    public long getId() {
+@Entity
+public class Doctor {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private String name;
+    private String specialization;
+
+    // Constructors
+    public Doctor() {}
+
+    public Doctor(String name, String specialization) {
+        this.name = name;
+        this.specialization = specialization;
+    }
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -22,19 +38,11 @@ public class Doctor {
         this.name = name;
     }
 
-    public String getSpecilization() {
-        return specilization;
+    public String getSpecialization() {
+        return specialization;
     }
 
-    public void setSpecilization(String specilization) {
-        this.specilization = specilization;
-    }
-
-    public int getExperience() {
-        return experience;
-    }
-
-    public void setExperience(int experience) {
-        this.experience = experience;
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
     }
 }
